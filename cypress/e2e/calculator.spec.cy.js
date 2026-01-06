@@ -175,6 +175,14 @@ describe('e2e test for calculator app', () => {
     });
   })
 
+  it('should check devide on zero',()=>{
+    clickDigit(2);
+    clickOperator('/');
+    clickDigit(0);
+    clickOperator('=')
+    getDashboardValue().should('have.value', 'Infinity');
+  })
+
   it('should check paste button', () => {
     clickDigit(9);
     clickDigit(9);
